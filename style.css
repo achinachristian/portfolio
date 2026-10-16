@@ -93,6 +93,9 @@ code{font-family:var(--font-mono);background:var(--surface-2);padding:.1em .4em;
 .project-card h3{margin:0 0 .3rem;font-size:1.05rem}
 .project-stack{color:var(--text-muted);font-size:.82rem;margin:0 0 .8rem}
 .project-card p:last-child{margin-bottom:0;color:var(--text-muted)}
+.project-desc{margin-bottom:0;color:var(--text-muted)}
+.project-link{display:inline-block;margin-top:1rem;font-family:var(--font-mono);font-size:.82rem;color:var(--accent)}
+.project-link:hover,.project-link:focus-visible{text-decoration:underline}
 
 .timeline{list-style:none;margin:0;padding:0 0 0 1.5rem;border-left:2px solid var(--border)}
 .timeline-item{position:relative;padding:0 0 2rem 1.5rem}
