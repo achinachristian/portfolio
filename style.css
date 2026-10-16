@@ -15,8 +15,8 @@ code{font-family:var(--font-mono);background:var(--surface-2);padding:.1em .4em;
 .to-top{position:fixed;right:1.25rem;bottom:1.25rem;width:2.5rem;height:2.5rem;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--accent);cursor:pointer;z-index:150}
 .to-top:hover{border-color:var(--accent)}
 .to-top[hidden]{display:none}
-.toast{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,150%);background:var(--surface-2);border:1px solid var(--accent-2);padding:.6rem 1rem;border-radius:var(--radius);font-size:.85rem;transition:transform .25s ease;z-index:300}
-.toast.show{transform:translate(-50%,0)}
+.toast{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,150%);opacity:0;pointer-events:none;background:var(--surface-2);border:1px solid var(--accent-2);padding:.6rem 1rem;border-radius:var(--radius);font-size:.85rem;transition:transform .25s ease,opacity .25s ease;z-index:300}
+.toast.show{transform:translate(-50%,0);opacity:1}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease,border-color .15s ease}
 .reveal.in{opacity:1;transform:none}
 
