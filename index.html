@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Christian Andrew Achina — Portfolio</title>
+<meta name="description" content="Portfolio of Christian Andrew H. Achina, BSIT student at PUP. Web development, relational databases, and the PhREC 2026 conference website.">
+<meta name="theme-color" content="#0D1017">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Christian Andrew Achina">
+<meta property="og:title" content="Christian Andrew Achina — Portfolio">
+<meta property="og:description" content="BSIT student at PUP. Web development, relational databases, and the PhREC 2026 conference website.">
+<meta property="og:url" content="https://achina-portfolio.vercel.app/">
+<meta property="og:image" content="https://achina-portfolio.vercel.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230D1017'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' text-anchor='middle' fill='%23E8A93B'%3ECA_%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -51,7 +61,6 @@
         <div class="hero-contact">
           <span>Marikina City, PH</span>
           <span>achinachristian@gmail.com</span>
-          <span>+63 962 298 4785</span>
         </div>
       </div>
       <div class="hero-terminal" aria-hidden="true">
@@ -59,8 +68,8 @@
         <div class="terminal-body">
           <p><span class="t-prompt">$</span> cat stack.json</p>
           <p class="t-out">{</p>
-          <p class="t-out">&nbsp;&nbsp;"frontend": ["React", "Next.js", "TS"],</p>
-          <p class="t-out">&nbsp;&nbsp;"data": ["SQL", "3NF", "ERD"],</p>
+          <p class="t-out">&nbsp;&nbsp;"frontend": ["React", "TS", "Vite"],</p>
+          <p class="t-out">&nbsp;&nbsp;"data": ["SQL", "Postgres", "ERD"],</p>
           <p class="t-out">&nbsp;&nbsp;"ai": ["Claude", "Copilot", "prompting"]</p>
           <p class="t-out">}</p>
           <p><span class="t-prompt">$</span> <span class="t-blink">▌</span></p>
@@ -72,10 +81,10 @@
   <section class="section" id="skills">
     <h2 class="section-title">What I work with</h2>
     <div class="skills-grid">
-      <div class="skill-card"><h3>Frontend Development</h3><div class="tag-row"><span class="tag">JavaScript (ES6+)</span><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Tailwind CSS</span></div></div>
+      <div class="skill-card"><h3>Web Development</h3><div class="tag-row"><span class="tag">JavaScript (ES6+)</span><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">HTML5</span><span class="tag">CSS3</span></div></div>
       <div class="skill-card"><h3>AI &amp; Automation</h3><div class="tag-row"><span class="tag">Claude AI</span><span class="tag">GitHub Copilot</span><span class="tag">Prompt Engineering</span><span class="tag">LLM Integration</span></div></div>
       <div class="skill-card"><h3>Foundational Programming</h3><div class="tag-row"><span class="tag">Java</span><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">R</span></div></div>
-      <div class="skill-card"><h3>Data &amp; Architecture</h3><div class="tag-row"><span class="tag">UI/UX Principles</span><span class="tag">DB Normalization (3NF)</span><span class="tag">Crow's Foot ERD</span></div></div>
+      <div class="skill-card"><h3>Data &amp; Architecture</h3><div class="tag-row"><span class="tag">PostgreSQL</span><span class="tag">UI/UX Principles</span><span class="tag">DB Normalization (3NF)</span><span class="tag">Crow's Foot ERD</span></div></div>
       <div class="skill-card"><h3>Tools &amp; Infrastructure</h3><div class="tag-row"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Codespaces</span><span class="tag">VS Code</span><span class="tag">RStudio</span><span class="tag">Cisco Packet Tracer</span></div></div>
     </div>
   </section>
@@ -98,6 +107,12 @@
     </div>
 
     <div class="projects-grid" id="projectsGrid">
+      <article class="project-card" data-category="software">
+        <span class="project-tag">Web / Client Work</span>
+        <h3>PhREC 2026 Conference Website</h3>
+        <p class="project-stack">React, TypeScript, Vite, Node.js, Express, PostgreSQL</p>
+        <p>Landing site for the 4th Philippine Renewable Energy Conference &amp; Exhibition, built for e-vents Philippines. Includes a registration form with email notifications, sponsor and event supporter sections, a photo gallery, and build-time pre-rendering for better search visibility.</p>
+      </article>
       <article class="project-card" data-category="software">
         <span class="project-tag">Software</span>
         <h3>Student Grade Management System</h3>
@@ -136,8 +151,8 @@
     <h2 class="section-title">Education &amp; extracurriculars</h2>
     <ol class="timeline">
       <li class="timeline-item"><span class="timeline-date">2024 – Expected 2028</span><h3>BSIT, Polytechnic University of the Philippines</h3><p>Coursework: Human-Computer Interaction, Object-Oriented Programming, Database Management Systems, Data Structures &amp; Algorithms, Network Administration.</p></li>
-      <li class="timeline-item"><span class="timeline-date">May 2026</span><h3>AFK Esports Tournament — PUP Student Council</h3><p>Champion (MLBB) · Team captain / core player, leading strategic communication and decision-making under strict constraints.</p></li>
-      <li class="timeline-item"><span class="timeline-date">CCIS Week</span><h3>CCIS Week Esports Championship</h3><p>College Champion (MLBB) · Led draft strategy and shot-calling to secure 1st place overall.</p></li>
+      <li class="timeline-item"><span class="timeline-date">2025 &amp; 2026</span><h3>AFK Esports Tournament — PUP Student Council</h3><p>Champion (MLBB) · Team captain / core player, leading strategic communication and decision-making under strict constraints.</p></li>
+      <li class="timeline-item"><span class="timeline-date">December 2025</span><h3>CCIS Week Esports Championship</h3><p>College Champion (MLBB) · Led draft strategy and shot-calling to secure 1st place overall.</p></li>
       <li class="timeline-item"><span class="timeline-date">March 2025</span><h3>Arduino Day Philippines</h3><p>Attended an event that focused on rapid prototyping and agile workflows.</p></li>
     </ol>
   </section>
@@ -162,7 +177,6 @@
         <h3>Direct lines</h3>
         <p><a href="mailto:achinachristian@gmail.com">achinachristian@gmail.com</a></p>
         <p><button type="button" class="btn btn-outline" id="copyEmail">Copy email</button></p>
-        <p><a href="tel:+639622984785">+63 962 298 4785</a></p>
         <p><a href="https://github.com/achinachristian" target="_blank" rel="noopener">github.com/achinachristian</a></p>
       </div>
     </div>
