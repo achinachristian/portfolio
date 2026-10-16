@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christian Andrew Achina — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+<button id="toTop" class="to-top" aria-label="Back to top" hidden>↑</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<header class="site-header">
+  <nav class="navbar" aria-label="Primary">
+    <a href="#top" class="logo">CA<span class="cursor-dot">_</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="nav-link">about</a></li>
+      <li><a href="#skills" class="nav-link">skills</a></li>
+      <li><a href="#projects" class="nav-link">projects</a></li>
+      <li><a href="#timeline" class="nav-link">timeline</a></li>
+      <li><a href="#contact" class="nav-link">contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark or light mode" aria-pressed="false" title="Toggle theme">
+        <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
+        <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+      </button>
+      <button id="menuToggle" class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero" id="about">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <h1 class="hero-name">Christian Andrew&nbsp;H. Achina</h1>
+        <p class="hero-role">BSIT student, PUP · <span id="typed"></span><span class="t-blink">▌</span></p>
+        <p class="hero-bio">Driven 3rd-year Information Technology student with a foundation in modern frontend architecture, relational database design, and AI-assisted development workflows. I like turning messy requirements into interfaces and schemas that actually hold up.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Get in touch</a>
+          <a href="https://github.com/achinachristian" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+          <button type="button" class="btn btn-outline" id="printResume">Save as PDF</button>
+        </div>
+        <div class="hero-contact">
+          <span>Marikina City, PH</span>
+          <span>achinachristian@gmail.com</span>
+          <span>+63 962 298 4785</span>
+        </div>
+      </div>
+      <div class="hero-terminal" aria-hidden="true">
+        <div class="terminal-bar"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span><span class="terminal-title">achina@pup:~</span></div>
+        <div class="terminal-body">
+          <p><span class="t-prompt">$</span> cat stack.json</p>
+          <p class="t-out">{</p>
+          <p class="t-out">&nbsp;&nbsp;"frontend": ["React", "Next.js", "TS"],</p>
+          <p class="t-out">&nbsp;&nbsp;"data": ["SQL", "3NF", "ERD"],</p>
+          <p class="t-out">&nbsp;&nbsp;"ai": ["Claude", "Copilot", "prompting"]</p>
+          <p class="t-out">}</p>
+          <p><span class="t-prompt">$</span> <span class="t-blink">▌</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <h2 class="section-title">What I work with</h2>
+    <div class="skills-grid">
+      <div class="skill-card"><h3>Frontend Development</h3><div class="tag-row"><span class="tag">JavaScript (ES6+)</span><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Tailwind CSS</span></div></div>
+      <div class="skill-card"><h3>AI &amp; Automation</h3><div class="tag-row"><span class="tag">Claude AI</span><span class="tag">GitHub Copilot</span><span class="tag">Prompt Engineering</span><span class="tag">LLM Integration</span></div></div>
+      <div class="skill-card"><h3>Foundational Programming</h3><div class="tag-row"><span class="tag">Java</span><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">R</span></div></div>
+      <div class="skill-card"><h3>Data &amp; Architecture</h3><div class="tag-row"><span class="tag">UI/UX Principles</span><span class="tag">DB Normalization (3NF)</span><span class="tag">Crow's Foot ERD</span></div></div>
+      <div class="skill-card"><h3>Tools &amp; Infrastructure</h3><div class="tag-row"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Codespaces</span><span class="tag">VS Code</span><span class="tag">RStudio</span><span class="tag">Cisco Packet Tracer</span></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <h2 class="section-title">Academic &amp; practical projects</h2>
+
+    <div class="filter-row" aria-label="Filter projects by category">
+      <button class="filter-btn is-active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="software">Software</button>
+      <button class="filter-btn" data-filter="data">Data</button>
+      <button class="filter-btn" data-filter="hci">HCI</button>
+      <button class="filter-btn" data-filter="network">Networking</button>
+    </div>
+
+    <div class="search-row">
+      <label for="projectSearch" class="sr-only">Search projects</label>
+      <input type="search" id="projectSearch" placeholder="search projects… (java, sql, vlan)">
+      <span id="resultCount" class="result-count"></span>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+      <article class="project-card" data-category="software">
+        <span class="project-tag">Software</span>
+        <h3>Student Grade Management System</h3>
+        <p class="project-stack">Java, Core Architecture</p>
+        <p>Modular state management logic for real-time academic datasets, with input validation via <code>BufferedReader</code> and OOP encapsulation separating data logic from display.</p>
+      </article>
+      <article class="project-card" data-category="software data">
+        <span class="project-tag">Software / Data</span>
+        <h3>Library Management Interface &amp; Relational Logic</h3>
+        <p class="project-stack">Java, SQL</p>
+        <p>Tracks book availability and transactions in real time, with search, filtering, and sorting utilities mapped onto relational data.</p>
+      </article>
+      <article class="project-card" data-category="data">
+        <span class="project-tag">Data Architecture</span>
+        <h3>Relational Database Schema Normalization</h3>
+        <p class="project-stack">SQL, Data Architecture</p>
+        <p>Normalized schemas up to 3NF using primary/foreign keys and Crow's Foot ERDs, eliminating redundancy and preserving transactional integrity.</p>
+      </article>
+      <article class="project-card" data-category="hci">
+        <span class="project-tag">HCI</span>
+        <h3>Digital Interface Usability &amp; Signage Redesign</h3>
+        <p class="project-stack">Human-Computer Interaction</p>
+        <p>Visual interface optimization mapped against Don Norman's Seven Stages of Action to reduce cognitive load and improve navigation clarity.</p>
+      </article>
+      <article class="project-card" data-category="network">
+        <span class="project-tag">Networking</span>
+        <h3>Network Infrastructure &amp; CLI Configuration</h3>
+        <p class="project-stack">Cisco CLI, Systems &amp; Networking</p>
+        <p>Simulated LAN topologies, broadcast domains, and VLANs via Cisco CLI to keep traffic routing optimized.</p>
+      </article>
+    </div>
+    <p id="emptyState" class="empty-state" hidden>No projects match that. Try another keyword.</p>
+  </section>
+
+  <section class="section" id="timeline">
+    <h2 class="section-title">Education &amp; extracurriculars</h2>
+    <ol class="timeline">
+      <li class="timeline-item"><span class="timeline-date">2024 – Expected 2028</span><h3>BSIT, Polytechnic University of the Philippines</h3><p>Coursework: Human-Computer Interaction, Object-Oriented Programming, Database Management Systems, Data Structures &amp; Algorithms, Network Administration.</p></li>
+      <li class="timeline-item"><span class="timeline-date">May 2026</span><h3>AFK Esports Tournament — PUP Student Council</h3><p>Champion (MLBB) · Team captain / core player, leading strategic communication and decision-making under strict constraints.</p></li>
+      <li class="timeline-item"><span class="timeline-date">CCIS Week</span><h3>CCIS Week Esports Championship</h3><p>College Champion (MLBB) · Led draft strategy and shot-calling to secure 1st place overall.</p></li>
+      <li class="timeline-item"><span class="timeline-date">March 2025</span><h3>Arduino Day Philippines</h3><p>Attended an event that focused on rapid prototyping and agile workflows.</p></li>
+    </ol>
+  </section>
+
+  <section class="section" id="contact">
+    <p class="prompt-line">Send me a message!</p>
+    <h2 class="section-title">Get in touch</h2>
+    <div class="contact-grid">
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="field"><label for="name">Name</label><input type="text" id="name" name="name" required><span class="error-msg" id="nameError"></span></div>
+        <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" required><span class="error-msg" id="emailError"></span></div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" maxlength="500" required></textarea>
+          <span class="counter" id="counter">0 / 500</span>
+          <span class="error-msg" id="messageError"></span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send message</button>
+        <p class="success-msg" id="successMsg" role="status" aria-live="polite">Opening your email app… thanks for reaching out, I'll reply soon.</p>
+      </form>
+      <div class="contact-info">
+        <h3>Direct lines</h3>
+        <p><a href="mailto:achinachristian@gmail.com">achinachristian@gmail.com</a></p>
+        <p><button type="button" class="btn btn-outline" id="copyEmail">Copy email</button></p>
+        <p><a href="tel:+639622984785">+63 962 298 4785</a></p>
+        <p><a href="https://github.com/achinachristian" target="_blank" rel="noopener">github.com/achinachristian</a></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Christian Andrew H. Achina.</p>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li>
+  </ul>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
