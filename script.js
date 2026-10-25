@@ -20,11 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.classList.toggle('is-open', isOpen);
     menuToggle.setAttribute('aria-expanded', String(isOpen));
   });
-  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+  function closeMenu(){
     navLinks.classList.remove('is-open');
     menuToggle.classList.remove('is-open');
     menuToggle.setAttribute('aria-expanded', 'false');
-  }));
+  }
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMenu();
+  });
 
   const themeToggle = document.getElementById('themeToggle');
   const root = document.documentElement;
@@ -43,14 +47,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const phrases = ['builds frontends.', 'wrangles databases.', 'ships with AI in the loop.', 'captains MLBB teams.'];
   const typed = document.getElementById('typed');
   let pi = 0, ci = 0, deleting = false;
-  (function tick(){
+  function tick(){
     const word = phrases[pi];
     typed.textContent = word.slice(0, ci);
     if (!deleting && ci === word.length){ deleting = true; return setTimeout(tick, 1400); }
     if (deleting && ci === 0){ deleting = false; pi = (pi + 1) % phrases.length; }
     ci += deleting ? -1 : 1;
     setTimeout(tick, deleting ? 35 : 70);
-  })();
+  }
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) typed.textContent = phrases[0];
+  else tick();
 
   const bar = document.getElementById('progress');
   const toTop = document.getElementById('toTop');
@@ -99,11 +106,16 @@ document.addEventListener('DOMContentLoaded', () => {
     emptyEl.hidden = visible !== 0;
   }
   filterButtons.forEach(btn => btn.addEventListener('click', () => {
-    filterButtons.forEach(b => b.classList.remove('is-active'));
+    filterButtons.forEach(b => {
+      b.classList.remove('is-active');
+      b.setAttribute('aria-pressed', 'false');
+    });
     btn.classList.add('is-active');
+    btn.setAttribute('aria-pressed', 'true');
     activeFilter = btn.dataset.filter;
     applyProjectFilters();
   }));
+  filterButtons.forEach(b => b.setAttribute('aria-pressed', String(b.classList.contains('is-active'))));
   search.addEventListener('input', applyProjectFilters);
   applyProjectFilters();
 
@@ -130,15 +142,46 @@ document.addEventListener('DOMContentLoaded', () => {
     input.closest('.field').classList.toggle('has-error', Boolean(message));
     error.textContent = message || '';
   }
+  function checkField(key){
+    const value = fields[key].input.value.trim();
+    if (key === 'name' && !value){
+      setError('name', 'Please enter your name.');
+      return false;
+    }
+    if (key === 'email'){
+      if (!value){ setError('email', 'Please enter your email.'); return false; }
+      if (!emailPattern.test(value)){ setError('email', 'Please enter a valid email address.'); return false; }
+    }
+    if (key === 'message'){
+      if (!value){ setError('message', 'Please enter a message.'); return false; }
+      if (value.length < 10){ setError('message', 'Message should be at least 10 characters.'); return false; }
+    }
+    setError(key, '');
+    return true;
+  }
+
   function validate(){
-    let valid = true;
-    if (!fields.name.input.value.trim()){ setError('name','Please enter your name.'); valid = false; } else setError('name','');
-    const emailVal = fields.email.input.value.trim();
-    if (!emailVal){ setError('email','Please enter your email.'); valid = false; }
-    else if (!emailPattern.test(emailVal)){ setError('email','Please enter a valid email address.'); valid = false; }
-    else setError('email','');
-    if (!msg.value.trim()){ setError('message','Please enter a message.'); valid = false; } else setError('message','');
-    return valid;
+    // map first so every error shows at once
+    return Object.keys(fields).map(checkField).every(Boolean);
+  }
+
+  const draftKey = 'contactDraft';
+  function saveDraft(){
+    store.set(draftKey, JSON.stringify({
+      name: fields.name.input.value,
+      email: fields.email.input.value,
+      message: msg.value
+    }));
+  }
+  const savedDraft = store.get(draftKey);
+  if (savedDraft){
+    try{
+      const draft = JSON.parse(savedDraft);
+      fields.name.input.value = draft.name || '';
+      fields.email.input.value = draft.email || '';
+      msg.value = draft.message || '';
+      counter.textContent = msg.value.length + ' / 500';
+    }catch{}
   }
 
   form.addEventListener('submit', event => {
@@ -152,6 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = 'mailto:achinachristian@gmail.com?subject=' + subject + '&body=' + body;
     successMsg.classList.add('is-visible');
     form.reset();
+    store.set(draftKey, '');
     counter.textContent = '0 / 500';
   });
 
@@ -159,6 +203,11 @@ document.addEventListener('DOMContentLoaded', () => {
   msg.addEventListener('input', () => {
     counter.textContent = msg.value.length + ' / 500';
     counter.classList.toggle('warn', msg.value.length > 450);
+  });
+
+  Object.keys(fields).forEach(key => {
+    fields[key].input.addEventListener('input', saveDraft);
+    fields[key].input.addEventListener('blur', () => checkField(key));
   });
 
 });
