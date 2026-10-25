@@ -21,6 +21,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#top">Skip to content</a>
+
 <div class="progress" id="progress" aria-hidden="true"></div>
 <button id="toTop" class="to-top" aria-label="Back to top" hidden>↑</button>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -105,7 +107,7 @@
     <div class="search-row">
       <label for="projectSearch" class="sr-only">Search projects</label>
       <input type="search" id="projectSearch" placeholder="search projects… (java, sql, vlan)">
-      <span id="resultCount" class="result-count"></span>
+      <span id="resultCount" class="result-count" aria-live="polite"></span>
     </div>
 
     <div class="projects-grid" id="projectsGrid">
@@ -114,7 +116,7 @@
         <h3>Philippine Renewable Energy Conference Website</h3>
         <p class="project-stack">React, TypeScript, Vite, Node.js, Express, PostgreSQL</p>
         <p class="project-desc">Landing site for the Philippine Renewable Energy Conference &amp; Exhibition, built for e-vents Philippines. Includes a registration form with email notifications, sponsor and event supporter sections, a photo gallery, and build-time pre-rendering for better search visibility.</p>
-        <a class="project-link" href="https://prece-vents.ph/" target="_blank" rel="noopener">View live site ↗</a>
+        <a class="project-link" href="https://prece-vents.ph/" target="_blank" rel="noopener" aria-label="View the live PhREC website (opens in a new tab)">View live site ↗</a>
       </article>
       <article class="project-card" data-category="software">
         <span class="project-tag">Software</span>
@@ -165,8 +167,8 @@
     <h2 class="section-title">Get in touch</h2>
     <div class="contact-grid">
       <form id="contactForm" class="contact-form" novalidate>
-        <div class="field"><label for="name">Name</label><input type="text" id="name" name="name" required><span class="error-msg" id="nameError"></span></div>
-        <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" required><span class="error-msg" id="emailError"></span></div>
+        <div class="field"><label for="name">Name</label><input type="text" id="name" name="name" autocomplete="name" required><span class="error-msg" id="nameError"></span></div>
+        <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required><span class="error-msg" id="emailError"></span></div>
         <div class="field">
           <label for="message">Message</label>
           <textarea id="message" name="message" rows="5" maxlength="500" required></textarea>
@@ -188,10 +190,12 @@
 </main>
 
 <footer class="site-footer">
-  <p>&copy; 2026 Christian Andrew H. Achina.</p>
-  <ul class="footer-links">
+  <p>&copy; <span id="year">2026</span> Christian Andrew H. Achina.</p>
+  <nav aria-label="Footer">
+    <ul class="footer-links">
     <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li>
   </ul>
+  </nav>
 </footer>
 
 <script src="script.js" defer></script>
